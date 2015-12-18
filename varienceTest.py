@@ -16,6 +16,7 @@ is very volatile, however as the number of hands dealt is increased the variance
 
 import random
 import time
+from termcolor import colored, cprint
 
 # Create a deck of possible cards that can be dealt to a player.
 possibles = ["Ace of Hearts", "2 of Hearts", "3 of Hearts", "4 of Hearts", "5 of Hearts", "6 of Hearts", "7 of Hearts",
@@ -102,13 +103,36 @@ while True:
                     average_kingcount = sum(kingCount) / 1
                 else:
                     average_kingcount = sum(kingCount) / king_num
+                kingVariance = average_kingcount / 220
+                aceVariance = average_acecount / 220
+                
+                # Create coloured text to display variance
+                positive = colored('Positive variance!', 'magenta', attrs=['bold'])
+                negative = colored('Negative variance!', 'red', attrs=['bold'])
+                even = colored('Even variance!', 'yellow', attrs=['bold'])
+                
                 # Display hand information
                 print("Average Ace Count:", average_acecount)
                 print("Pocket aces received", ace_num, "times.")
-                print("Ace Variance:", (average_acecount / 220), "\n")
+                print("Ace Variance:", aceVariance, "\n")
+                if aceVariance > 1:
+                    print(positive)
+                if aceVariance < 1:
+                    print(negative)
+                if aceVariance == 1:
+                    print(even)
+                print("\n")
+                
                 print("Average King Count:", average_kingcount)
                 print("Pocket Kings received", king_num, "times.")
-                print("King Variance:", (average_kingcount / 220), "\n")
+                print("King Variance:", kingVariance, "\n")
+                if kingVariance > 1:
+                    print(positive)
+                if kingVariance < 1:
+                    print(negative)
+                if kingVariance == 1:
+                    print(even)
+                print("\n")
                 clear_terminal()
             
             if "King" in firstCard and "King" in secondCard:
@@ -127,10 +151,34 @@ while True:
                     average_acecount = sum(aceCount) / 1
                 else:
                     average_acecount = sum(aceCount) / ace_num
+                kingVariance = average_kingcount / 220
+                aceVariance = average_acecount / 220
+                
+                # Create coloured text to display variance
+                positive = colored('Positive variance!', 'magenta', attrs=['bold'])
+                negative = colored('Negative variance!', 'red', attrs=['bold'])
+                even = colored('Even variance!', 'yellow', attrs=['bold'])
+                
+                # Display hand information
                 print("Average Ace Count:", average_acecount)
                 print("Pocket aces received", ace_num, "times.")
                 print("Ace Variance:", (average_acecount / 220), "\n")
+                if aceVariance > 1:
+                    print(positive)
+                if aceVariance < 1:
+                    print(negative)
+                if aceVariance == 1:
+                    print(even)
+                print("\n")
+                
                 print("Average King Count:", average_kingcount)
                 print("Pocket Kings received", king_num, "times.")
-                print("King Variance:", (average_kingcount / 220), "\n")    
+                print("King Variance:", (average_kingcount / 220), "\n") 
+                if kingVariance > 1:
+                    print(positive)
+                if kingVariance < 1:
+                    print(negative)
+                if kingVariance == 1:
+                    print(even)
+                print("\n")   
                 clear_terminal()       
