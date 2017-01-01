@@ -1,4 +1,4 @@
-from exturtle import * #Import all the exturtle functions
+from turtle import * #Import all the exturtle functions
 from math import cos, sin, pi
  
 def star(turtle, x, y, points, R, r):
