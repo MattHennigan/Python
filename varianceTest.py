@@ -1,7 +1,7 @@
 """
-varienceTest.py:
+varianceTest.py:
 
-Varience in poker is defined as the upswings and downswings that a player can expect in their game.
+Variance in poker is defined as the upswings and downswings that a player can expect in their game.
 In its most simple form, variance is attributed to luck. Poker is majorly based on chance, and hence one cannot expect to win all the time.
 Even with the best starting hand in the game (two aces), one can only expect to win the hand 85.2% of the time (every 4 out of 5).
 This program is designed to demonstrate a very basic form of variance; the difference between how often you receive either two aces or two
